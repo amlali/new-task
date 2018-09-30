@@ -31,7 +31,7 @@ var x=[{
     param: 'phone',
     label: 'Phone',
     type:Number,
-    regex: /^[0-9]{11}$/
+    regex: /^01[0125]{1}[0-9]{8}$/
 
 }];
 

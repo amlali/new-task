@@ -49,7 +49,12 @@ User.methods.addUser=function(obj){
      
 }
 
+User.method.setUser=function(obj){
+    this.email=obj.email;
+    this.password=obj.password;
+}
 User.methods.isValidPassword=function(password){
+    console.log(`password is:${password},hash:${this.password}`)
   return bcrypt.compareSync(password, this.password);
 }
 //User.methods.getTicketData=function(){

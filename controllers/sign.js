@@ -30,13 +30,14 @@ if(ucheck.hasErrors()){
 }
 else{
     var user=new User();
-    User.findOne({email:req.body.email}).exec(function(err,res){
-
-        if(user.isValidPassword(req.body.email)){
+    User.findOne({email:req.body.email}).exec(function(err,result){
+       user.email=result.email;
+       user.password=result.password;
+        if(user.isValidPassword(req.body.password)){
          return res.status(200).send();
         }
         else{
-            return res.status(400).send();
+            return res.status(400).send('not valid');
 
         }
       
